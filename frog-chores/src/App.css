@@ -22,3 +22,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.App>button {
+  margin-top: 5%;
+  padding: 0%;
+  border: none;
+  background: none;
+  align-self: center;
+}
