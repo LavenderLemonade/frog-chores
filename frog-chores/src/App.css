@@ -30,3 +30,27 @@ body {
   background: none;
   align-self: center;
 }
+
+.hidden {
+  position: absolute;
+  opacity: 0;
+}
+
+.visible {
+
+  opacity: 1;
+}
+
+#img1 {
+  transition: all 100ms ease-out;
+}
+
+#img2 {
+  transition: all 100ms ease-out;
+
+}
+
+#img3 {
+  transition: all 300ms ease-out;
+
+}
