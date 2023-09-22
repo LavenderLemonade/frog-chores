@@ -1,44 +1,43 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import chores from './choresdone.png'
 import expectantFrog from './firstfrog.png'
 import buttonOne from './buttonfirst.png'
-import buttonTwo from './buttonsecond.png'
 import buttonThree from './buttonthird.png'
+import goodJob from './goodjob.png'
+import secondFrog from './secondfrog.png'
 
 function App() {
 
   const [state, setState] = useState({
     showFirst: true,
-    showSecond: false,
-    showThird: false
+    showThird: false,
+    frog: expectantFrog,
+    message: chores
   });
 
   function handleClick() {
     setState({
       showFirst: false,
-      showSecond: true,
-    });
-
-    setState({
-      showSecond: false,
       showThird: true,
+      frog: secondFrog,
+      message: goodJob
     });
-
 
   }
 
 
-  const { showFirst, showSecond, showThird } = state;
+
+
+  const { showFirst, showThird, frog, message } = state;
 
   return (
     <div className="App">
-      <img src={chores} alt='choresdone' />
-      <img src={expectantFrog} alt='frog1' />
+      <img src={message} alt='choresdone' />
+      <img src={frog} alt='frog1' />
 
       <button onClick={handleClick}>
         <img id="img1" className={`${showFirst ? "visible" : "hidden"}`} src={buttonOne} alt='choresdone' />
-        <img id="img2" className={`${showSecond ? "visible" : "hidden"}`} src={buttonTwo} alt='choresdone' />
         <img id="img3" className={`${showThird ? "visible" : "hidden"}`} src={buttonThree} alt='choresdone' />
       </button>
     </div>
